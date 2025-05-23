@@ -1,32 +1,26 @@
-# SolidStart
+# Contemporaries
 
-Everything you need to build a Solid project, powered by [`solid-start`](https://start.solidjs.com);
+See who lived alongside your favorite historical figures!
 
-## Creating a project
+This website allows you to search for any historical figure and see who lived alongside them. It uses a large dataset of historical figures and their birth and death dates to find contemporaries. The website is built using SolidJS and the TimelineJS library.
 
-```bash
-# create a new project in the current directory
-npm init solid@latest
+## Acknowledgements
 
-# create a new project in my-app
-npm init solid@latest my-app
-```
+The data used by this project came from [Morgane Laouenan et al. &#8599;](https://www.nature.com/articles/s41597-022-01369-4). The data was sorted based on a person's notability ranking. Only the top 250,000 historical figures are viewable.
+
+The timeline visualization was created using [Timeline by Knightlab &#8599;](https://timeline.knightlab.com/).
+
+Original data was provided by [Wikipedia &#8599;](https://www.wikipedia.org/) and [Wikidata &#8599;](https://www.wikidata.org/).
+
+Made by [Jose Rivas](https://www.rotios.dev/) using [solid-start](https://start.solidjs.com).
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
+Run this application with the following commands:
 ```bash
-npm run dev
+npm install
+npm run build
 
 # or start the server and open the app in a new browser tab
 npm run dev -- --open
 ```
-
-## Building
-
-Solid apps are built with _presets_, which optimise your project for deployment to different environments.
-
-By default, `npm run build` will generate a Node app that you can run with `npm start`. To use a different preset, add it to the `devDependencies` in `package.json` and specify in your `app.config.js`.
-
-## This project was created with the [Solid CLI](https://solid-cli.netlify.app)
