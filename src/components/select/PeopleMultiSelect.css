@@ -1,0 +1,72 @@
+.pms-container {
+  position: relative;
+  width: 340px;
+  font-family: system-ui, sans-serif;
+}
+
+.pms-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 6px;
+  min-height: 32px;
+}
+
+.pms-tag {
+  background: #e0e7ff;
+  color: #3730a3;
+  padding: 4px 10px 4px 8px;
+  border-radius: 16px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 2px #0001;
+}
+
+.pms-tag button {
+  margin-left: 6px;
+  border: none;
+  background: none;
+  color: #6366f1;
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
+
+.pms-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1.5px solid #a5b4fc;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border 0.2s;
+}
+
+.pms-dropdown {
+  position: absolute;
+  z-index: 10;
+  background: white;
+  border: 1.5px solid #a5b4fc;
+  border-radius: 8px;
+  width: 100%;
+  max-height: 220px;
+  overflow: auto;
+  margin: 2px 0 0 0;
+  padding: 0;
+  list-style: none;
+  box-shadow: 0 4px 16px #0002;
+}
+
+.pms-option {
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.15s;
+}
+
+.pms-option:hover {
+  background: #eef2ff;
+}
