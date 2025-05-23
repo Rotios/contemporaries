@@ -97,3 +97,15 @@
   color: #a5b4fc;
   opacity: 1;
 }
+
+@media (max-width: 600px) {
+  .timeline-num-input {
+    font-size: 0.75rem;
+  }
+  .timeline-label {
+    font-size: 0.75rem;
+  }   
+  .timeline-pagination{
+    font-size: 0.75rem;
+  }
+}

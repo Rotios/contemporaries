@@ -1,11 +1,14 @@
 import { createSignal, Show, For } from "solid-js";
 import "./PeopleMultiSelect.css";
+import { useWindowWidth } from "../../utils/useWindowWidth";
 
 export function PeopleMultiSelect(props: {
     people: { name: string }[];
     value: string[];
     onChange: (names: string[]) => void;
 }) {
+
+    const width = useWindowWidth();
     const [input, setInput] = createSignal("");
     const [showDropdown, setShowDropdown] = createSignal(false);
 
@@ -33,7 +36,7 @@ export function PeopleMultiSelect(props: {
 
     return (
         <div class="pms-container">
-            Search for people:&nbsp;
+            {width() > 600 ? 'Search for people:' : '' }
 
             <div class="pms-tags">
                 <For each={props.value}>

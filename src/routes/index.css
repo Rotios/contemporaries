@@ -48,3 +48,24 @@ a:hover {
   border-radius: 14px;
   box-shadow: 0 2px 12px #3730a305;
 }
+@media (max-width: 800px) {
+  h1 {
+    font-size: 1.75rem;
+    margin: 1.2rem auto;
+  }
+  p {
+    font-size: 1.2rem;
+    margin: 0.5rem auto;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+    margin: 1.2rem auto;
+  }
+  p {
+    font-size: 1rem;
+    margin: 0.5rem auto;
+  }
+}

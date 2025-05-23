@@ -7,6 +7,7 @@ import {
 
 import "@thisbeyond/solid-select/style.css";
 import "./Timeline.css";
+import { useWindowWidth } from "../utils/useWindowWidth";
 
 declare global {
   interface Window {
@@ -26,6 +27,7 @@ export default function Timeline() {
   const [timelineData, setTimelineData] = createSignal<any>(null);
   const [error, setError] = createSignal<string | null>(null);
   const [numContemporaries, setNumContemporaries] = createSignal(5);
+  const width = useWindowWidth();
 
   let timelineInstance: any = null;
 
@@ -127,7 +129,7 @@ export default function Timeline() {
         onClick={handleFullscreen}
         aria-label="Go Fullscreen"
       >
-        ⛶ Fullscreen
+        ⛶ {width() > 600 ? "Fullscreen" : ""}
       </button>
       <div class="timeline-controls">
         {error() && <div class="timeline-error">{error()}</div>}
@@ -142,7 +144,7 @@ export default function Timeline() {
           />
         </label>
         <br/>
-        <label style="margin-left:1em;">
+        <label class="timeline-label">
           Number of contemporaries:&nbsp;&nbsp;
           <input
             type="text"

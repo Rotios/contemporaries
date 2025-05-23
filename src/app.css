@@ -59,3 +59,35 @@ p {
   color: #3730a3;
   border-bottom: 1px solid #6366f1;
 }
+
+@media (max-width: 900px) {
+  .main-nav {
+    flex-direction: row;
+    align-items: center;
+    top: 0.5em;
+    justify-content: center;
+    width: 100%;
+    gap: 2em;
+    background: white;
+    padding: 0.5em 0;
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 0.5em;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin: 1.2rem auto;
+  }
+  p {
+    font-size: 1rem;
+    margin: 0.5rem auto;
+  }
+  .page-container {
+    max-width: 98vw;
+    padding: 1em 1vw;
+  }
+}
