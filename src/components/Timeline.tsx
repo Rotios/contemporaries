@@ -115,6 +115,8 @@ export default function Timeline() {
       document.exitFullscreen?.();
     } else if (timelineContainer?.requestFullscreen) {
       timelineContainer.requestFullscreen();
+    } else {
+      alert("Fullscreen is not supported on this device/browser.");
     }
   }
 
