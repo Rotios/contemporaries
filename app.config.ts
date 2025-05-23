@@ -4,7 +4,7 @@ import pkg from "@vinxi/plugin-mdx";
 
 const { default: mdx } = pkg;
 export default defineConfig({
-  extensions: ["mdx", "md"],
+  extensions: ["mdx", "md", "tsx"],
   ssr: true,
   server: {
     baseURL: '/contemporaries',
