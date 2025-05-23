@@ -1,5 +1,5 @@
 {
-  "name": "example-with-mdx",
+  "name": "@rotios/contemporaries",
   "type": "module",
   "scripts": {
     "dev": "vinxi dev",
