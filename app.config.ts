@@ -7,17 +7,18 @@ export default defineConfig({
   extensions: ["mdx", "md"],
   ssr: true,
   server: {
-      baseURL: process.env.BASE_PATH,
-      preset: "static"
-    },
+    baseURL: '/contemporaries',
+    preset: "static"
+  },
   vite: {
     server: {
-      baseURL: process.env.BASE_PATH,
+      baseURL: '/contemporaries',
       preset: "static"
     },
     plugins: [
       mdx.withImports({})({
         jsx: true,
+        ssr: true,
         jsxImportSource: "solid-js",
         providerImportSource: "solid-mdx"
       })
