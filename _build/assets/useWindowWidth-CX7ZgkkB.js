@@ -1,0 +1,1 @@
+import{b as t,C as o,n as d}from"./web-Cgzb-LDx.js";function s(){const[i,n]=t(0);return o(()=>{n(window.innerWidth);const e=()=>n(window.innerWidth);window.addEventListener("resize",e),d(()=>window.removeEventListener("resize",e))}),i}export{s as u};

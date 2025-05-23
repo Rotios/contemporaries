@@ -3,23 +3,31 @@
     "file": "assets/HttpStatusCode-DjTx85av.js",
     "name": "HttpStatusCode"
   },
-  "_Timeline-BdEZsc9f.js": {
-    "file": "assets/Timeline-BdEZsc9f.js",
+  "_Timeline-6Snmw8rr.css": {
+    "file": "assets/Timeline-6Snmw8rr.css",
+    "src": "_Timeline-6Snmw8rr.css"
+  },
+  "_Timeline-DufQrDwe.js": {
+    "file": "assets/Timeline-DufQrDwe.js",
     "name": "Timeline",
     "imports": [
-      "_web-Cgzb-LDx.js"
+      "_web-Cgzb-LDx.js",
+      "_useWindowWidth-CX7ZgkkB.js"
     ],
     "css": [
-      "assets/Timeline-BxUnh5JT.css"
+      "assets/Timeline-6Snmw8rr.css"
     ]
-  },
-  "_Timeline-BxUnh5JT.css": {
-    "file": "assets/Timeline-BxUnh5JT.css",
-    "src": "_Timeline-BxUnh5JT.css"
   },
   "_index-Dn60JXcG.js": {
     "file": "assets/index-Dn60JXcG.js",
     "name": "index",
+    "imports": [
+      "_web-Cgzb-LDx.js"
+    ]
+  },
+  "_useWindowWidth-CX7ZgkkB.js": {
+    "file": "assets/useWindowWidth-CX7ZgkkB.js",
+    "name": "useWindowWidth",
     "imports": [
       "_web-Cgzb-LDx.js"
     ]
@@ -29,19 +37,19 @@
     "name": "web"
   },
   "src/routes/[...404].mdx?pick=$css": {
-    "file": "assets/_...404_-DYJmsuaE.js",
+    "file": "assets/_...404_-Cse4l7WD.js",
     "name": "_...404_",
     "src": "src/routes/[...404].mdx?pick=$css",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-Dn60JXcG.js",
       "_web-Cgzb-LDx.js",
+      "_index-Dn60JXcG.js",
       "_HttpStatusCode-DjTx85av.js"
     ]
   },
   "src/routes/index.mdx?pick=$css": {
-    "file": "assets/index-FOGxR-jf.js",
+    "file": "assets/index-9i5zNRqQ.js",
     "name": "index",
     "src": "src/routes/index.mdx?pick=$css",
     "isEntry": true,
@@ -49,11 +57,12 @@
     "imports": [
       "_web-Cgzb-LDx.js",
       "_index-Dn60JXcG.js",
-      "_Timeline-BdEZsc9f.js"
+      "_Timeline-DufQrDwe.js",
+      "_useWindowWidth-CX7ZgkkB.js"
     ]
   },
   "src/routes/landing.mdx?pick=$css": {
-    "file": "assets/landing-CuMM7xFf.js",
+    "file": "assets/landing-B0ELnm6-.js",
     "name": "landing",
     "src": "src/routes/landing.mdx?pick=$css",
     "isEntry": true,
@@ -61,16 +70,18 @@
     "imports": [
       "_web-Cgzb-LDx.js",
       "_index-Dn60JXcG.js",
-      "_Timeline-BdEZsc9f.js"
+      "_Timeline-DufQrDwe.js",
+      "_useWindowWidth-CX7ZgkkB.js"
     ]
   },
   "virtual:$vinxi/handler/client": {
-    "file": "assets/client-UMF5cujD.js",
+    "file": "assets/client-CQnq3B2p.js",
     "name": "client",
     "src": "virtual:$vinxi/handler/client",
     "isEntry": true,
     "imports": [
       "_web-Cgzb-LDx.js",
+      "_useWindowWidth-CX7ZgkkB.js",
       "_HttpStatusCode-DjTx85av.js"
     ],
     "dynamicImports": [
@@ -79,7 +90,7 @@
       "src/routes/landing.mdx?pick=$css"
     ],
     "css": [
-      "assets/client-cUrGtz-k.css"
+      "assets/client-ByoPIlSU.css"
     ]
   }
 }
