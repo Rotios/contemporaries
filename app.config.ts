@@ -7,12 +7,12 @@ export default defineConfig({
   extensions: ["mdx", "md"],
   ssr: true,
   server: {
-      baseURL: process.env.BASE_PATH,
+      baseURL: `${process.env.BASE_PATH}/contemporaries`,
       preset: "static"
     },
   vite: {
     server: {
-      baseURL: process.env.BASE_PATH,
+      baseURL: `${process.env.BASE_PATH}/contemporaries`,
       preset: "static"
     },
     plugins: [
