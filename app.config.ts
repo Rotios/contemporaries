@@ -5,7 +5,16 @@ import pkg from "@vinxi/plugin-mdx";
 const { default: mdx } = pkg;
 export default defineConfig({
   extensions: ["mdx", "md"],
+  ssr: true,
+  server: {
+      baseURL: process.env.BASE_PATH,
+      preset: "static"
+    },
   vite: {
+    server: {
+      baseURL: process.env.BASE_PATH,
+      preset: "static"
+    },
     plugins: [
       mdx.withImports({})({
         jsx: true,
