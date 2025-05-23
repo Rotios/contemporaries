@@ -30,7 +30,7 @@ export default function Timeline() {
   async function loadAllPeopleFiles() {
     setError(null);
     try {
-      const firstRes = await fetch(`/data/ranking/people_part_1.json`);
+      const firstRes = await fetch(`/contemporaries/data/ranking/people_part_1.json`);
       if (!firstRes.ok) throw new Error(`Failed to load people_part_1.json: ${firstRes.statusText}`);
       const firstData = await firstRes.json();
       setPeople(firstData);
@@ -38,7 +38,7 @@ export default function Timeline() {
       const filePromises = [];
       for (let i = 2; i <= TOTAL_FILES; i++) {
         filePromises.push(
-          fetch(`/data/ranking/people_part_${i}.json`)
+          fetch(`/contemporaries/data/ranking/people_part_${i}.json`)
             .then(res => {
               if (!res.ok) throw new Error(`Failed to load people_part_${i}.json: ${res.statusText}`);
               return res.json();
