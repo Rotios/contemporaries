@@ -71,3 +71,29 @@
 .timeline-pagination-btn:not(:disabled):hover {
   background: #e0e7ff;
 }
+
+.timeline-num-input {
+  font-size: 1em;
+  padding: 0.35em 0.8em;
+  border: 1px solid #a5b4fc;
+  border-radius: 4px;
+  background: #f5f7ff;
+  color: #3730a3;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 4px #6366f10a;
+  margin-left: 0.5em;
+  text-align: right;
+}
+
+.timeline-num-input:focus {
+  border: 1.5px solid #6366f1;
+  background: #fff;
+  box-shadow: 0 2px 8px #6366f122;
+}
+
+.timeline-num-input::-webkit-input-placeholder,
+.timeline-num-input::placeholder {
+  color: #a5b4fc;
+  opacity: 1;
+}

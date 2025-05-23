@@ -32,7 +32,7 @@ export function getYears(p: any) {
   };
 }
 
-export function findContemporaries(selected: any[], people: any[], topN = 5) {
+export function findContemporaries(selected: any[], people: any[], topN = 25) {
   let contemporaries: any[] = [];
   const seen = new Set(
     selected.map(p => p.wikidata_code || p.curid || p.name)

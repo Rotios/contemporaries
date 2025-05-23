@@ -6,7 +6,6 @@ import {
 } from "./timelineUtils";
 
 import "@thisbeyond/solid-select/style.css";
-
 import "./Timeline.css";
 
 declare global {
@@ -18,19 +17,22 @@ declare global {
 const PAGE_SIZE = 250;
 const TOTAL_FILES = 25;
 
+const base_url=import.meta.env.SERVER_BASE_URL;
+
 export default function Timeline() {
   const [people, setPeople] = createSignal<any[]>([]);
   const [selectedNames, setSelectedNames] = createSignal<string[]>([]);
   const [page, setPage] = createSignal(0);
   const [timelineData, setTimelineData] = createSignal<any>(null);
   const [error, setError] = createSignal<string | null>(null);
+  const [numContemporaries, setNumContemporaries] = createSignal(5);
 
   let timelineInstance: any = null;
 
   async function loadAllPeopleFiles() {
     setError(null);
     try {
-      const firstRes = await fetch(`/contemporaries/data/ranking/people_part_1.json`);
+      const firstRes = await fetch(`${base_url}/data/ranking/people_part_1.json`);
       if (!firstRes.ok) throw new Error(`Failed to load people_part_1.json: ${firstRes.statusText}`);
       const firstData = await firstRes.json();
       setPeople(firstData);
@@ -38,7 +40,7 @@ export default function Timeline() {
       const filePromises = [];
       for (let i = 2; i <= TOTAL_FILES; i++) {
         filePromises.push(
-          fetch(`/contemporaries/data/ranking/people_part_${i}.json`)
+          fetch(`${base_url}/data/ranking/people_part_${i}.json`)
             .then(res => {
               if (!res.ok) throw new Error(`Failed to load people_part_${i}.json: ${res.statusText}`);
               return res.json();
@@ -66,7 +68,7 @@ export default function Timeline() {
     const selected = people().filter(p =>
       selectedNames().includes(p.name.replace(/_/g, " "))
     );
-    const contemporaries = findContemporaries(selected, people());
+    const contemporaries = findContemporaries(selected, people(), numContemporaries()); 
     const combined = [...selected, ...contemporaries];
     const seen = new Set();
     return combined.filter(p => {
@@ -106,7 +108,6 @@ export default function Timeline() {
 
   let timelineContainer: HTMLDivElement | undefined;
 
-
   function handleFullscreen() {
     if (document.fullscreenElement) {
       document.exitFullscreen?.();
@@ -138,6 +139,25 @@ export default function Timeline() {
               setSelectedNames(names);
               setPage(0);
             }}
+          />
+        </label>
+        <br/>
+        <label style="margin-left:1em;">
+          Number of contemporaries:&nbsp;&nbsp;
+          <input
+            type="text"
+            inputmode="numeric"
+            pattern="[0-9]*"
+            class="timeline-num-input"
+            value={numContemporaries()}
+            onInput={e => {
+              const val = parseInt(e.currentTarget.value.replace(/\D/g, ""), 10);
+              if (!isNaN(val) && val > 0) setNumContemporaries(val);
+              else if (e.currentTarget.value === "") setNumContemporaries(1);
+            }}
+            style="width: 4em;"
+            autocomplete="off"
+            spellcheck={false}
           />
         </label>
       </div>
