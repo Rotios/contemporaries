@@ -11,7 +11,7 @@ import ClientOnly from "./components/ClientOnly";
 export default function App() {
   return (
     <Router
-      base={import.meta.env.SERVER_BASE_URL}
+      base={import.meta.env.SERVER_BASE_URL + '/contemporaries'}
       root={props => (
         <main>
           <nav class="main-nav">
