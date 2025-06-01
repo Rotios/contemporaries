@@ -7,9 +7,11 @@ export function parseYear(val: any) {
 export function personToEvent(person: any) {
   return {
     media: {
-      url: "",
+      // url: `https://en.wikipedia.org/w/api.php?action=query&prop=extracts|pageimages&redirects=&titles=${person.name}&exintro=1&format=json&callback=jsonp1`,
+      url: `https://en.wikipedia.org/wiki/${person.name}`,
+  
       caption: person.name.replace(/_/g, " "),
-      credit: [person.citizenship_1_b, person.citizenship_2_b].filter(Boolean).join(", "),
+      credit: 'Wikipedia',
     },
     start_date: {
       year: parseYear(person.birth_estimation || person.birth),
@@ -19,7 +21,7 @@ export function personToEvent(person: any) {
     } : undefined,
     text: {
       headline: person.name.replace(/_/g, " "),
-      text: `<p>${person.level3_main_occ || person.level2_main_occ || person.level1_main_occ || ""} (${parseYear(person.birth_estimation || person.birth) || "?"}–${parseYear(person.death_estimation || person.death) || "?"})<br/>${person.citizenship_1_b || ""}${person.citizenship_2_b ? ", " + person.citizenship_2_b : ""}</p>`,
+      text: `<p>${(person.level3_main_occ || person.level2_main_occ || person.level1_main_occ || "")}<br/>${(person.citizenship_1_b || "")?.replace(/_/g, " ")}${(person.citizenship_2_b ? ", " + person.citizenship_2_b : "")?.replace(/_/g, " ")}</p>`,
     },
     unique_id: person.wikidata_code || person.curid,
   };
